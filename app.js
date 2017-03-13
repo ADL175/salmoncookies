@@ -3,6 +3,13 @@
 var storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '8pm', 'total'];
 //15 hours in day
 
+// create ul tag
+// create one li tag
+// fill li tag innertext w/ information
+// append li tag to ul as child
+// append ul to body
+// var element = document.createElement(tagName[, options]);
+
 
 var firstPike = {
   name: '1st and Pike',
@@ -23,6 +30,12 @@ var firstPike = {
       console.log('total is: ' + total);
     }
     this.hourlysales.push(total);
+  }
+  var body = document.getElementsByTagName('body')
+  var firstList = document.createElement ('ul');
+  for (var i = 0; i <= hours.length; i++){
+    firstListItem.createtextnode = firstPike.hourlysales[i];
+    firstList.appendChild(firstListItem);
   }
 };
 
@@ -50,7 +63,7 @@ var seaTac = {
   }
 };
 
-var cookieStore = {
+var seattleCenter = {
   name: 'Seattle Center',
   minCust: 11,
   maxCust: 38,
@@ -72,7 +85,7 @@ var cookieStore = {
   }
 };
 
-var cookieStore = {
+var capitol = {
   name: 'Capitol Hill',
   minCust: 20,
   maxCust: 38,
@@ -94,7 +107,7 @@ var cookieStore = {
   }
 };
 
-var cookieStore = {
+var alki = {
   name: 'Alki',
   minCust: 2,
   maxCust: 16,
