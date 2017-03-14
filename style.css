@@ -1,0 +1,49 @@
+img {
+  width: 50%;
+}
+
+div {
+  text-align: center;
+}
+
+button {
+  margin: auto;
+  text-align: center;
+  font-size: 2vw;
+}
+
+section {
+  background-color: white;
+  background-size: 200%;
+  border-radius: 10%;
+  text-align: left;
+  background-color: white;
+  border-radius: 10%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+  padding: 30px;
+  font-size: 25px;
+}
+
+body {
+  background: url('https://images1.pixlis.com/background-image-horizontal-lines-and-stripes-seamless-tileable-deep-pink-salmon-22he73.png') repeat;
+  font-family: arial, verdana;
+}
+
+h1, h2 {
+  font-family: 'Griffy', cursive;
+  font-size: 20px;
+  border: 5px solid black;
+  margin: 5%;
+  text-align: center;
+  font-size: 5vw;
+  border-radius: 20%;
+
+}
+
+footer, nav.Favorites {
+  font-family: inherit;
+  text-align: center;
+}

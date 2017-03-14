@@ -19,7 +19,7 @@ var firstPike = {
   hourlysales: [],
 
   randomCustomerPerHour: function(){
-    return Math.floor(Math.random() * ((this.maxCust - this.minCust + 1) + this.minCust));
+    return Math.floor(Math.random() * ((this.maxCust - this.minCust) + this.minCust));
   },
   sales: function(){
     var total= 0;
@@ -31,13 +31,8 @@ var firstPike = {
     }
     this.hourlysales.push(total);
   }
+
 };
-
-var potato = document.getElementsByTagName('body')[0];
-var tomato = document.createElement('li');
-tomato.textContent = 'dflaskdjf;ladskjf;ladskfj';
-potato.appendChild(tomato);
-
 
 var seaTac = {
   name: 'SeaTac Airport',
