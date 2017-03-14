@@ -19,7 +19,7 @@ var firstPike = {
   hourlysales: [],
 
   randomCustomerPerHour: function(){
-    return Math.floor(Math.random() * ((this.maxCust - this.minCust) + this.minCust));
+    return Math.floor(Math.random() * ((this.maxCust - this.minCust + 1) + this.minCust));
   },
   sales: function(){
     var total= 0;
