@@ -29,7 +29,6 @@ function Store(storeName, minCust, maxCust, avgCookies){
   };
   this.createListItems= function(){
     //create li elements and push them to specified to element
-    this
     var newHeading = document.createElement('h2');
     newHeading.innerText = this.storeName;
     body.appendChild(newHeading);
@@ -46,9 +45,16 @@ function Store(storeName, minCust, maxCust, avgCookies){
   }
 }
 
-function tableHead (){
+function tableFunc (){
+ var newTable  = document.createElement('table');
+ var newTabHead = document.createElement('thead');
+ newTabHead.innerText = this.storeName;
+ thead.appendChild(newTabHead);
+ var tBody = document.createElement('tbody')
 
 }
+tableFunc(poop.createListItems());
+
 
 var firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
 var poop = new Store('Poop', 34, 213, 3.3);
