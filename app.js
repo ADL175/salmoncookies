@@ -31,14 +31,12 @@ var firstPike = {
     }
     this.hourlysales.push(total);
   }
-  var body = document.getElementsByTagName('body')
-  var firstList = document.createElement ('ul');
-  for (var i = 0; i <= hours.length; i++){
-    firstListItem.createtextnode = firstPike.hourlysales[i];
-    firstList.appendChild(firstListItem);
-  }
 };
 
+var potato = document.getElementsByTagName('body')[0];
+var tomato = document.createElement('li');
+tomato.textContent = 'dflaskdjf;ladskjf;ladskfj';
+potato.appendChild(tomato);
 
 
 var seaTac = {
