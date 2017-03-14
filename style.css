@@ -1,5 +1,8 @@
 img {
   width: 50%;
+  padding: 40px;
+  border-radius: 50%;
+  border: 5px solid pink;
 }
 
 div {
@@ -23,7 +26,7 @@ section {
   margin-bottom: 100px;
   margin-right: 150px;
   margin-left: 80px;
-  padding: 30px;
+  padding: 40px;
   font-size: 25px;
 }
 
