@@ -15,6 +15,11 @@ button {
   font-size: 2vw;
 }
 
+table, th, td {
+    border: 1px solid black;
+    background: white;
+}
+
 section {
   background-color: white;
   background-size: 200%;
@@ -24,8 +29,8 @@ section {
   border-radius: 10%;
   margin-top: 100px;
   margin-bottom: 100px;
-  margin-right: 150px;
-  margin-left: 80px;
+  margin-right: 100px;
+  margin-left: 100px;
   padding: 40px;
   font-size: 25px;
 }

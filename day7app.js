@@ -2,6 +2,8 @@
 
 var storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '8pm', 'total'];
 
+var myStores = [];
+
 var body = document.getElementsByTagName('body')[0];
 
 function Store(storeName, minCust, maxCust, avgCookies){
@@ -17,9 +19,7 @@ function Store(storeName, minCust, maxCust, avgCookies){
   this.cookiesSold = function(){
     var total = 0;
     for(var i = 0; i < storeHours.length -1; i++) {
-    //-1 of storeHours array [total]
     var cookiesPerHour = Math.floor(this.avgCookies * this.randCust());
-    //generates cookies sales total
     this.salesArr.push(cookiesPerHour);
     total += cookiesPerHour;
     }
@@ -28,37 +28,57 @@ function Store(storeName, minCust, maxCust, avgCookies){
     //adds total number of sales for day to the sales array
   };
   this.createListItems= function(){
-    //create li elements and push them to specified to element
-    var newHeading = document.createElement('h2');
-    newHeading.innerText = this.storeName;
-    body.appendChild(newHeading);
-    var firstUl = document.createElement('ul');
-    for(var i = 0; i < storeHours.length; i++) {
-      //for every hour I ewant to put put the cookies sold for that hour;
-      var newEl = document.createElement('li'); //creates list item
-      newEl.innerText = storeHours[i] + ': ' + this.salesArr[i] + ' cookies';
-      firstUl.appendChild(newEl);
-      //append the new list item to the ul tag that we created
+    this.cookiesSold();
+    var table = document.getElementsByTagName('table')[0];
+     var tbody = document.createElement('tbody');
+     table.appendChild(tbody);
+     var tr = document.createElement('tr');
+     tbody.appendChild(tr);
+     var tData = document.createElement('td');
+     tr.appendChild(tData);
+     tData.innerText = this.name;
+      for(var i = 0; i < storeHours.length; i++){
+          var td = document.createElement('td');
+          td.innerText = this.salesArr[i];
+          tr.appendChild(td);
+        }
+        table.appendChild(tbody);
     }
-    body.appendChild(firstUl);
-    //append the ul tag to the body
+    myStores.push(this);
+}//   }
+//
+function renderHeader (){
+  var table = document.createElement('table');
+  body.appendChild(table);
+  var thead = document.createElement('thead');
+  table.appendChild(thead);
+  var tr = document.createElement('tr');
+  thead.appendChild(tr);
+  var blank = document.createElement('th');
+  blank.innerText = 'Store Name';
+  thead.appendChild(blank);
+  for(var i = 0; i < storeHours.length; i++){
+    var th = document.createElement('th');
+    th.innerText = storeHours[i];
+    thead.appendChild(th);
   }
-}
+};
 
-function tableFunc (){
- var newTable  = document.createElement('table');
- var newTabHead = document.createElement('thead');
- newTabHead.innerText = this.storeName;
- thead.appendChild(newTabHead);
- var tBody = document.createElement('tbody')
-
-}
-tableFunc(poop.createListItems());
+renderHeader();
 
 
 var firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
-var poop = new Store('Poop', 34, 213, 3.3);
-firstAndPike.cookiesSold();
+var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
+var seaCenter = new Store('Seattle Center', 11, 38, 3.7);
+var capitol = new Store('Capitol Hill', 20, 38, 3.3);
+var alki = new Store('Alki', 2, 16, 4.6);
+
 firstAndPike.createListItems();
-poop.cookiesSold();
-poop.createListItems();
+seaTac.createListItems();
+seaCenter.createListItems();
+capitol.createListItems();
+alki.createListItems();
+// firstAndPike.cookiesSold();
+// firstAndPike.createListItems();
+// poop.cookiesSold();
+// poop.createListItems();
