@@ -15,7 +15,31 @@ button {
   font-size: 2vw;
 }
 
+table, th, td {
+    border: 1px solid black;
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding-bottom: auto;
+}
+
 section {
+  background-color: white;
+  background-size: 200%;
+  border-radius: 10%;
+  text-align: left;
+  background-color: white;
+  border-radius: 10%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 100px;
+  margin-left: 100px;
+  padding: 40px;
+  font-size: 25px;
+}
+
+ul {
   background-color: white;
   background-size: 200%;
   border-radius: 10%;
@@ -27,7 +51,7 @@ section {
   margin-right: 150px;
   margin-left: 80px;
   padding: 40px;
-  font-size: 25px;
+  font-size: 12px;
 }
 
 body {
@@ -43,7 +67,6 @@ h1, h2 {
   text-align: center;
   font-size: 5vw;
   border-radius: 20%;
-
 }
 
 footer, nav.Favorites {
