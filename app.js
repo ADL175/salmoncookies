@@ -78,26 +78,15 @@ var form = document.getElementById('the-form');
 function alertTheUser(event){
   event.preventDefault();
   var theFormItself = event.target;
-  console.log(theFormItself.elements['storeName'].value);
-  console.log(theFormItself.elements['minCust'].value);
-  console.log(theFormItself.elements['maxCust'].value);
-  console.log(theFormItself.elements['avgCookies'].value);
+  var storeName = theFormItself.elements['storeName'].value;
+  var minCust = Math.floor(theFormItself.elements['minCust'].value);
+  var maxCust = Math.floor(theFormItself.elements['maxCust'].value);
+  var avgCookies = theFormItself.elements['avgCookies'].value;
+  if(maxCust < minCust ){
+    console.log('User is a moron');
+    confirm('Error, You\'re a moron! You put the maximum sales is less than minimum sales');
+  }else{
+    var userStore = new Store(storeName, minCust, maxCust, avgCookies);
+    userStore.generateTableRow();}
 };
 form.addEventListener('submit', alertTheUser);
-
-
-
-
-var userStoreName = document.getElementById("storeName");
-
-userStoreName.addEventListener('submit', alertTheUser);
-//placeholder store;
-var userStore = new Store('Practice Store', 2, 16, 4.6);//placeholder for event
-
-function newUserStore(){
-  myStores.push(userStore);
-  userStore.generateTableRow();
-};
-
-newUserStore();
-myStores;
