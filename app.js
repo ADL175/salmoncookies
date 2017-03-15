@@ -4,7 +4,6 @@ var myStores = [];
 var storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '8pm', 'total'];
 
 var body = document.getElementsByTagName('body')[0];
-//var body = document.body;
 
 function Store(storeName, minCust, maxCust, avgCookies){
   this.name = storeName;
@@ -25,7 +24,6 @@ function Store(storeName, minCust, maxCust, avgCookies){
     }
     this.salesArr.push(total);
     console.log(this.salesArr);
-    //adds total number of sales for day to the sales array
   };
   this.generateTableRow= function(){
     this.cookiesSold();
@@ -44,7 +42,7 @@ function Store(storeName, minCust, maxCust, avgCookies){
         }
         table.appendChild(tbody);
     }
-    myStores.push(this);//this was put in the old version w/o for loop
+    myStores.push(this);
 }
 
 function renderHeader (){
@@ -71,7 +69,7 @@ var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
 var seaCenter = new Store('Seattle Center', 11, 38, 3.7);
 var capitol = new Store('Capitol Hill', 20, 38, 3.3);
 var alki = new Store('Alki', 2, 16, 4.6);
-//
+
 for (var i = 0; i < myStores.length; i++) {
   myStores[i].generateTableRow();
 }
