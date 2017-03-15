@@ -12,12 +12,12 @@ function Store(storeName, minCust, maxCust, avgCookies){
   this.avgCookies = avgCookies;
   this.salesArr = [];
   this.randCust = function(){
-        return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
-        console.log(this.randCust);
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
+    console.log(this.randCust);
   };
   this.cookiesSold = function(){
     var total = 0;
-    for(var i = 0; i < storeHours.length -1; i++) {
+    for(var i = 0; i < storeHours.length - 1; i++) {
       var cookiesPerHour = Math.floor(this.avgCookies * this.randCust());
       this.salesArr.push(cookiesPerHour);
       total += cookiesPerHour;
@@ -25,24 +25,24 @@ function Store(storeName, minCust, maxCust, avgCookies){
     this.salesArr.push(total);
     console.log(this.salesArr);
   };
-  this.generateTableRow= function(){
+  this.generateTableRow = function(){
     this.cookiesSold();
     var table = document.getElementsByTagName('table')[0];
-     var tbody = document.createElement('tbody');
-     table.appendChild(tbody);
-     var tr = document.createElement('tr');
-     tbody.appendChild(tr);
-     var tData = document.createElement('td');
-     tr.appendChild(tData);
-     tData.innerText = this.name;
-      for(var i = 0; i < storeHours.length; i++){
-          var td = document.createElement('td');
-          td.innerText = this.salesArr[i];
-          tr.appendChild(td);
-        }
-        table.appendChild(tbody);
+    var tbody = document.createElement('tbody');
+    table.appendChild(tbody);
+    var tr = document.createElement('tr');
+    tbody.appendChild(tr);
+    var tData = document.createElement('td');
+    tr.appendChild(tData);
+    tData.innerText = this.name;
+    for(var i = 0; i < storeHours.length; i++){
+      var td = document.createElement('td');
+      td.innerText = this.salesArr[i];
+      tr.appendChild(td);
     }
-    myStores.push(this);
+    table.appendChild(tbody);
+  };
+  myStores.push(this);
 }
 
 function renderHeader (){
