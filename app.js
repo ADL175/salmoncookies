@@ -73,3 +73,31 @@ var alki = new Store('Alki', 2, 16, 4.6);
 for (var i = 0; i < myStores.length; i++) {
   myStores[i].generateTableRow();
 }
+
+var form = document.getElementById('the-form');
+function alertTheUser(event){
+  event.preventDefault();
+  var theFormItself = event.target;
+  console.log(theFormItself.elements['storeName'].value);
+  console.log(theFormItself.elements['minCust'].value);
+  console.log(theFormItself.elements['maxCust'].value);
+  console.log(theFormItself.elements['avgCookies'].value);
+};
+form.addEventListener('submit', alertTheUser);
+
+
+
+
+var userStoreName = document.getElementById("storeName");
+
+userStoreName.addEventListener('submit', alertTheUser);
+//placeholder store;
+var userStore = new Store('Practice Store', 2, 16, 4.6);//placeholder for event
+
+function newUserStore(){
+  myStores.push(userStore);
+  userStore.generateTableRow();
+};
+
+newUserStore();
+myStores;
