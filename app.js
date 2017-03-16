@@ -2,8 +2,14 @@
 
 var myStores = [];
 var storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '8pm', 'total'];
-
+var firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
+var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
+var seaCenter = new Store('Seattle Center', 11, 38, 3.7);
+var capitol = new Store('Capitol Hill', 20, 38, 3.3);
+var alki = new Store('Alki', 2, 16, 4.6);
 var body = document.getElementsByTagName('body')[0];
+var table = document.createElement('table');
+var tbody = document.createElement('tbody');
 
 function Store(storeName, minCust, maxCust, avgCookies){
   this.name = storeName;
@@ -27,7 +33,6 @@ function Store(storeName, minCust, maxCust, avgCookies){
   };
   this.generateTableRow = function(){
     this.cookiesSold();
-    var table = document.getElementsByTagName('table')[0];
     table.appendChild(tbody);
     var tr = document.createElement('tr');
     tbody.appendChild(tr);
@@ -44,9 +49,6 @@ function Store(storeName, minCust, maxCust, avgCookies){
   myStores.push(this);
 }
 
-var table = document.createElement('table');
-var tbody = document.createElement('tbody');
-
 function renderHeader (){
   var thead = document.createElement('thead');
   var tr = document.createElement('tr');
@@ -62,19 +64,11 @@ function renderHeader (){
     thead.appendChild(th);
   }
 };
-
-renderHeader();
-
-var firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
-var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
-var seaCenter = new Store('Seattle Center', 11, 38, 3.7);
-var capitol = new Store('Capitol Hill', 20, 38, 3.3);
-var alki = new Store('Alki', 2, 16, 4.6);
-
+//for loop calls methods to add to table
 for (var i = 0; i < myStores.length; i++) {
   myStores[i].generateTableRow();
 }
-
+//create JS events for user entry
 var form = document.getElementById('the-form');
 function alertTheUser(event){
   event.preventDefault();
@@ -86,15 +80,19 @@ function alertTheUser(event){
   if(maxCust < minCust){
     confirm('You put the maximum sales is less than minimum sales');
   }else{
+
     var userStore = new Store(storeName, minCust, maxCust, avgCookies);
+    var table = document.getElementsByTagName('table')[0];
+    var tFoot = document.getElementsByTagName('table')[0];
+
+    table.removeChild(footTr);
     userStore.generateTableRow();}
   form.reset();
 };
 form.addEventListener('submit', alertTheUser);
-
-// Footer Total Function
+// Create Footer Total Function
+var footTr = document.createElement('tr');
 function renderFooter(){
-  var footTr = document.createElement('tr');
   var footTd = document.createElement('td');
   footTd.innerText = 'Hourly Totals';
   footTr.appendChild(footTd);
@@ -112,4 +110,6 @@ function renderFooter(){
   console.log(footTr);
   tbody.appendChild(footTr);
 }
+//calling header footer function
+renderHeader();
 renderFooter();

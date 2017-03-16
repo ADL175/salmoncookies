@@ -30,6 +30,11 @@ table, th, td {
     font-size: 20px;
 }
 
+
+div .container {
+  float: left;
+  width: 33%;
+}
 section {
   background-color: white;
   background-size: 200%;
@@ -65,9 +70,19 @@ body {
   font-family: arial, verdana;
 }
 
-h1, h2 {
+h1 {
   font-family: 'Griffy', cursive;
-  font-size: 20px;
+  font-size: 30px;
+  border: 5px solid black;
+  margin: 5%;
+  text-align: center;
+  font-size: 5vw;
+  border-radius: 20%;
+}
+
+h2 {
+  font-family: 'Griffy', cursive;
+  font-size: 15px;
   border: 5px solid black;
   margin: 5%;
   text-align: center;
