@@ -64,7 +64,6 @@ function renderHeader (){
 
 renderHeader();
 
-
 var firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
 var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
 var seaCenter = new Store('Seattle Center', 11, 38, 3.7);
@@ -84,13 +83,30 @@ function alertTheUser(event){
   var maxCust = Math.floor(theFormItself.elements['maxCust'].value);
   var avgCookies = theFormItself.elements['avgCookies'].value;
   if(maxCust < minCust){
-    console.log('User is a moron');
-    confirm('Error, You\'re a moron! You put the maximum sales is less than minimum sales');
-  }else if (minCust < 0){
-        confirm('Error, You\'re a moron! Your minimum number of sales cannot be less than zero.');
+    confirm('You put the maximum sales is less than minimum sales');
   }else{
     var userStore = new Store(storeName, minCust, maxCust, avgCookies);
     userStore.generateTableRow();}
-    form.reset();
+  form.reset();
 };
 form.addEventListener('submit', alertTheUser);
+
+// Footer Total Function
+function renderFooter(){
+  var footTr = document.createElement('tr');
+  var footTd = document.createElement('td');
+  footTd.innerText = 'Hourly Totals';
+  footTr.appendChild(footTd);
+  for(var i = 0; i < storeHours.length; i++){
+    var hourlyTotal = 0;
+    for(var j = 0; j < myStores.length; j++){
+      hourlyTotal += myStores[j].cookiesSold[i];
+    }
+    footTd = document.createElement('footTd');
+    footTd.innerText = hourlyTotal;
+    footTr.appendChild(footTd);
+  }
+  return footTr;
+}
+
+renderFooter();
