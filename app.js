@@ -8,30 +8,37 @@ var seaCenter = new Store('Seattle Center', 11, 38, 3.7);
 var capitol = new Store('Capitol Hill', 20, 38, 3.3);
 var alki = new Store('Alki', 2, 16, 4.6);
 
-var body = document.getElementsByTagName('body')[0];
 var table = document.createElement('table');
 var tbody = document.createElement('tbody');
-
-function Store(storeName, minCust, maxCust, avgCookies){
+/*Object Constructor to build the stores:
+function store =
+  contains:
+    numCustomersPerHour = randomly genereated customers per hour w/ in limits of minCustomersPerHour and maxCustomersPerHour
+    cookiesPerHour
+*/
+function Store(storeName, minCustomersPerHour, maxCustomersPerHour, avgCookiesPerCustomer){
   this.name = storeName;
-  this.minCust = minCust;
-  this.maxCust = maxCust;
-  this.avgCookies = avgCookies;
-  this.salesArr = [];
-  this.randCust = function(){
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
+  this.minCustomersPerHour = minCustomersPerHour;
+  this.maxCustomersPerHour = maxCustomersPerHour;
+  this.avgCookiesPerCustomer = avgCookiesPerCustomer;
+//Cookes Sold for each hour of the store hours, total sum is last item
+  this.populateCookiesSoldPerHour = [];
+//Generates a random amount of customers per hour, at each store, w/in the limits of minCustomersPerHour and maxCustomersPerHour
+  this.numCustomersPerHour = function(){
+    return Math.floor(Math.random() * (this.maxCustomersPerHour - this.minCustomersPerHour + 1) + this.minCustomersPerHour);
   };
-  this.cookiesSold = function(){
+
+  this.cookiesPerHour = function(){
     var total = 0;
     for(var i = 0; i < storeHours.length - 1; i++) {
-      var cookiesPerHour = Math.floor(this.avgCookies * this.randCust());
-      this.salesArr.push(cookiesPerHour);
+      var cookiesPerHour = Math.floor(this.avgCookiesPerCustomer * this.numCustomersPerHour());
+      this.populateCookiesSoldPerHour.push(cookiesPerHour);
       total += cookiesPerHour;
     }
-    this.salesArr.push(total);
+    this.populateCookiesSoldPerHour.push(total);
   };
-  this.generateTableRow = function(){
-    this.cookiesSold();
+  this.appendTableRow = function(){
+    this.cookiesPerHour();
     var tr = document.createElement('tr');
     tbody.appendChild(tr);
     var tData = document.createElement('td');
@@ -39,7 +46,7 @@ function Store(storeName, minCust, maxCust, avgCookies){
     tData.innerText = this.name;
     for(var i = 0; i < storeHours.length; i++){
       var td = document.createElement('td');
-      td.innerText = this.salesArr[i];
+      td.innerText = this.populateCookiesSoldPerHour[i];
       tr.appendChild(td);
     }
     table.appendChild(tbody);
@@ -48,6 +55,8 @@ function Store(storeName, minCust, maxCust, avgCookies){
 }
 
 function renderHeader (){
+  var body = document.getElementsByTagName('body')[0];
+
   var thead = document.createElement('thead');
   var tr = document.createElement('tr');
   var blank = document.createElement('th');
@@ -64,7 +73,7 @@ function renderHeader (){
 };
 //for loop calls methods to add to table
 for (var i = 0; i < myStores.length; i++) {
-  myStores[i].generateTableRow();
+  myStores[i].appendTableRow();
 }
 //create JS events for user entry
 var form = document.getElementById('the-form');
@@ -73,17 +82,17 @@ function submitButton(event){
   event.preventDefault();
   var theFormItself = event.target;
   var storeName = theFormItself.elements['storeName'].value;
-  var minCust = Math.floor(theFormItself.elements['minCust'].value);
-  var maxCust = Math.floor(theFormItself.elements['maxCust'].value);
-  var avgCookies = theFormItself.elements['avgCookies'].value;
-  if(maxCust < minCust){
+  var minCustomersPerHour = Math.floor(theFormItself.elements['minCustomersPerHour'].value);
+  var maxCustomersPerHour = Math.floor(theFormItself.elements['maxCustomersPerHour'].value);
+  var avgCookiesPerCustomer = theFormItself.elements['avgCookiesPerCustomer'].value;
+  if(maxCustomersPerHour < minCustomersPerHour){
     confirm('You put the maximum sales is less than minimum sales');
   }else{
-    var userStore = new Store(storeName, minCust, maxCust, avgCookies);
+    var userStore = new Store(storeName, minCustomersPerHour, maxCustomersPerHour, avgCookiesPerCustomer);
     var table = document.getElementsByTagName('table')[0];
     var totalsRow = document.getElementsByTagName('table')[0];
     // tfoot.removeChild(totalsRow);//remove existing total row
-    userStore.generateTableRow();
+    userStore.appendTableRow();
   }
   form.reset();
 };
@@ -98,7 +107,7 @@ function renderFooter(){
   for(var i = 0; i < storeHours.length; i++){
     var hourlyTotal = 0;
     for(var j = 0; j < myStores.length; j++){
-      hourlyTotal += myStores[j].salesArr[i];
+      hourlyTotal += myStores[j].populateCookiesSoldPerHour[i];
     }
     footTd = document.createElement('td');
     footTd.innerText = hourlyTotal;
