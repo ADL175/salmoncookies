@@ -152,7 +152,9 @@ function userSubmitButtonEvent(event){
       avgCookiesPerCustomer);
     var table = document.getElementsByTagName('table')[0];
     var totalsRow = document.getElementsByTagName('table')[0];
+    tbody.removeChild(tbody.lastChild);
     userStore.appendTableRow();
+    renderSalesTotalFooter();
   }
   form.reset();
 };
