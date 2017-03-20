@@ -19,11 +19,11 @@
     <section>
       <p>
     Our booth is by the river, next to the store, past the bridge. Come say 'Hi' to Sammy the Salmon, before we make him into a cookie!</p>
-  <p>
-<a href ="http://www.salmondays.org/">
-<img src ="https://static.wixstatic.com/media/9db178_87998b2bcc564657874aaba3fd942b3f~mv2_d_3000_1200_s_2.png/v1/fill/w_742,h_292,al_c,usm_0.66_1.00_0.01/9db178_87998b2bcc564657874aaba3fd942b3f~mv2_d_3000_1200_s_2.png"/></a>
+  <div>
+    <a href ="http://www.salmondays.org/">
+    <img src ="https://static.wixstatic.com/media/9db178_87998b2bcc564657874aaba3fd942b3f~mv2_d_3000_1200_s_2.png/v1/fill/w_742,h_292,al_c,usm_0.66_1.00_0.01/9db178_87998b2bcc564657874aaba3fd942b3f~mv2_d_3000_1200_s_2.png"/></a>
 
-</p>
+  </div>
     </section>
     <h2>About Our Franchise</h2>
     <section>
@@ -35,28 +35,28 @@
 
     <form action="index.html" method="get" id="the-form">
       <fieldset>
-        <h2>Enter Your Store Information Below!</h2>
-      <ul>
-        <li>
+      <div class="input-data">
+        <h2>Estimate Sales Figures</h2>
+        <p>Below is the table data showing sales figures from our five different stores in Washington State. Enter your expected sales figures below to generate your expected sales totals of cookies sold per hour!
+        </p>
+        <p>
           <input type="text" maxlength="10" placeholder="Store Name" value="" name="storeName" id="storeName" required/>
-        </li>
-        <li>
+        </p>
+        <p>
           <input type="text" maxlength="5" placeholder="Minimum Customers" value="" name="minCust" id="minCustomersPerHour" type="number" min="0" required/>
-        </li>
-        <li>
+        </p>
+        <p>
           <input type="text" maxlength="5" placeholder="Maximum Customers" value="" name="maxCust" id="maxCustomersPerHour" type= "number" required/>
-        </li>
-        <li>
+        </p>
+        <p>
           <input type="text" maxlength="5" placeholder="Average Cookies" value="" name="avgCookies" id="avgCookiesPerCustomer" type="number" step="0.01" required/>
-        </li>
-        <li>
+        </p>
+        <p>
           <input type="submit" value="Submit" name="submit" id="submitbutton"/>
-        </li>
-      </ul>
+        </p>
+      </div>
     </fieldset>
     </form>
-
-<h2>Number of Cookies Sold Per Hour at Different Stores</h2>
     <script src="app.js"></script>
   </body>
   </html>

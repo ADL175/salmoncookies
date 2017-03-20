@@ -12,13 +12,12 @@ fieldset {
 
 div {
   text-align: center;
-  border: 5px solid red;
 }
 
 button {
   margin: auto;
   text-align: center;
-  font-size: 2vw;
+  font-size: 30px;
 }
 
 table, th, td {
@@ -31,6 +30,9 @@ table, th, td {
     font-size: 20px;
 }
 
+.input-data p input {
+  font-size: 30px;
+}
 
 div .container {
   float: left;
@@ -63,7 +65,7 @@ ul {
   margin-right: 150px;
   margin-left: 80px;
   padding: 40px;
-  font-size: 12px;
+  font-size: 20px;
 }
 
 body {
