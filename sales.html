@@ -1,62 +1,70 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Griffy" rel="stylesheet">
-    <div><a href="home.html"><button>Index Page</button></a><br/>
-    <img src="salmon.png"></img></div>
+    <link href="https://fonts.googleapis.com/css?family=Griffy"
     <meta charset="utf-8">
-    <title>Salmon Cookies Franchise Sales</title>
+    <title>Salmon Cookies</title>
   </head>
-  <body>
-    <h1>Salmon Cookie Information</h1>
-    <h2>Company Mission</h2>
-    <section>
-      <p>
-    We love cookies and we love salmon. So we made salmon cookes. Once you eat one, you'll go crazy. Literally. We love cookies and we love salmon. So we made salmon cookes. Once you eat one, you'll go crazy. Literally. We love cookies and we love salmon. So we made salmon cookes. Once you eat one, you'll go crazy. Literally. We love cookies and we love salmon. So we made salmon cookes. Once you eat one, you'll go crazy. Literally. We love cookies and we love salmon. So we made salmon cookes. Once you eat one, you'll go crazy. Literally. We love cookies and we love salmon. So we made salmon cookes. Once you eat one, you'll go crazy. Literally. We love cookies and we love salmon. So we made salmon cookes. Once you eat one, you'll go crazy. Literally.</p>
-  </section>
-    <h2>Come See Us At Salmon Days in Issaquah</h2>
-    <section>
-      <p>
-    Our booth is by the river, next to the store, past the bridge. Come say 'Hi' to Sammy the Salmon, before we make him into a cookie!</p>
-  <p>
-<a href ="http://www.salmondays.org/">
-<img src ="https://static.wixstatic.com/media/9db178_87998b2bcc564657874aaba3fd942b3f~mv2_d_3000_1200_s_2.png/v1/fill/w_742,h_292,al_c,usm_0.66_1.00_0.01/9db178_87998b2bcc564657874aaba3fd942b3f~mv2_d_3000_1200_s_2.png"/></a>
+    <body class="bg">
+     <div id=”wrapper” >
+      <header>
+        <img src="https://s-media-cache-ak0.pinimg.com/originals/e0/72/82/e07282197e6da85e34d1c5fe526b8a4f.png" width="100px">
+        <span>Salmon Cookies</span>
+       </header>
+      <nav>
+        <a href="home.html" class="fish-menu-letter"> <img src="https://s-media-cache-ak0.pinimg.com/originals/e0/72/82/e07282197e6da85e34d1c5fe526b8a4f.png" width="30px" class="fish-menu"> HOME </a>
 
-</p>
-    </section>
-    <h2>About Our Franchise</h2>
-    <section>
-    Interested in becoming a part of our franchise? Salmon cookies are very tasty and there's no way this business will fail! Here is some info about our sales figures from our different stores!!!
-  </section>
-    <div>
-      <img src="http://3.bp.blogspot.com/-NABk0cw5CMM/UyUeTOz6gyI/AAAAAAAAAls/1YNkVS5DMuo/s1600/money++(6).JPG"/>
-    </div>
+        <a href="merchandise.html" class="fish-menu-letter"><img src="https://s-media-cache-ak0.pinimg.com/originals/e0/72/82/e07282197e6da85e34d1c5fe526b8a4f.png" width="30px" class="fish-menu"> MERCHANDISE </a>
 
-    <form action="index.html" method="get" id="the-form">
-      <fieldset>
-        <h2>Enter Your Store Information Below!</h2>
-      <ul>
-        <li>
-          <input type="text" maxlength="10" placeholder="Store Name" value="" name="storeName" id="storeName" required/>
-        </li>
-        <li>
-          <input type="text" maxlength="5" placeholder="Minimum Customers" value="" name="minCust" id="minCust" type="number" min="0" required/>
-        </li>
-        <li>
-          <input type="text" maxlength="5" placeholder="Maximum Customers" value="" name="maxCust" id="maxCust" type= "number" required/>
-        </li>
-        <li>
-          <input type="text" maxlength="5" placeholder="Average Cookies" value="" name="avgCookies" id="avgCookies" type="number" step="0.01" required/>
-        </li>
-        <li>
-          <input type="submit" value="Submit" name="submit" id="submitbutton"/>
-        </li>
-      </ul>
-    </fieldset>
-    </form>
+        <a href="sales.html" class="fish-menu-letter"><img src="https://s-media-cache-ak0.pinimg.com/originals/e0/72/82/e07282197e6da85e34d1c5fe526b8a4f.png" width="30px" class="fish-menu"> SALES </a>
 
-<h2>Number of Cookies Sold Per Hour at Different Stores</h2>
-    <script src="app.js"></script>
+      </nav>
+      <article id="wider-article">
+        <section id="sec2">
+          <form action="index.html" method="get" id="the-form">
+            <fieldset>
+              <h2>Enter Your Store Information Below!</h2>
+              <p>Below is our current store information of cookies sold at each hour and the total of cookes sold for all stores. Enter your store name, estimated minimum and maximum hourly cookie sales, and average cookies sold per customer to generate your estimated sales totals.
+              </p>
+            <ul id="storelist">
+              <li>
+                <input type="text" maxlength="10" placeholder="Store Name" value="" name="storeName" id="storeName" required/>
+              </li>
+              <li>
+                <input type="text" maxlength="5" placeholder="Minimum Customers" value="" name="minCust" id="minCust" type="number" min="0" required/>
+              </li>
+              <li>
+                <input type="text" maxlength="5" placeholder="Maximum Customers" value="" name="maxCust" id="maxCust" type= "number" required/>
+              </li>
+              <li>
+                <input type="text" maxlength="5" placeholder="Average Cookies" value="" name="avgCookies" id="avgCookies" type="number" step="0.01" required/>
+              </li>
+              <li>
+                <input type="submit" value="Submit" name="submit" id="submitbutton"/>
+              </li>
+            </ul>
+          </fieldset>
+          </form>
+        </section>
+        <section>
+          <!-- Table goes here -->
+        </section>
+      </article>
+<!--
+        <aside>
+            <h2>Our Store Locations</h2>
+          <img src="assets/family.jpg" width="165px">
+          <ul>
+            <li><a href="#">1st and Pike</a><br/>1st Ave Pike St, Seattle, WA 98021</li><br/>
+            <li><a href="#">SeaTac Airport</a><br/>1000 Seatac Wy, SeaTac, WA 98231</li><br/>
+            <li><a href="#">Seattle Center</a><br/>23432 Airport Way, Seattle, WA 98022</li><br/>
+            <li><a href="#">Capitol Hill</a><br/>8809 Capitol Hill Rd, Capitol Hill, WA 98911</li><br/>
+            <li><a href="#">Alki</a><br/>5000 Meridian Way, Alki, WA 98011</li><br/>
+
+          </ul></aside> -->
+              <script src="js/app.js"></script>
   </body>
-  </html>
+  <footer id=”footer” >Salmon Cookies LLC <a href="mailto:fakeemail@email.com"> email us </a> SomethingSmellsFishy@email.com <a href="tel:+12061234568"> or call us </a> (206)123-5678 Copyright 2017</footer>
+</html>

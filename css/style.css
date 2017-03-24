@@ -102,6 +102,10 @@ article {
   border-radius: 5%;
 }
 
+#wider-article {
+  width: 1000px;
+}
+
 p{
   font-family: sans-serif;
 }
@@ -116,7 +120,7 @@ aside {
   color: #CCC;
   padding: 25px 25px 10px 25px;
   /*border: 5px solid gray;*/
-  border-radius: 20%;
+  /*border-radius: 5%;*/
 }
 
 footer {
@@ -177,12 +181,49 @@ section img:hover {
   transition-duration: 2s;
 }
 
+#storelist {
+  background-color: white;
+  background-size: 200%;
+  border-radius: 10%;
+  text-align: center;
+  background-color: white;
+  border-radius: 10%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+  padding: 40px;
+  font-size: 12px;
+  list-style: none;
 
+}
 
+table, td {
+    border: 1px solid black;
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding-bottom: auto;
+    font-size: 20px;
+    color: purple;
+}
 
+th {
+  background: orange;
+}
 
+button {
+  margin: auto;
+  text-align: center;
+  font-size: 1vw;
+}
 
-
+.merch {
+  float: right;
+  text-align: center;
+  font-size: 12px;
+}
 
 
 
@@ -203,20 +244,12 @@ section img:hover {
   border: 5px solid pink;
 }
 
-fieldset {
-  font-size: 30px;
-
-}
 
 div {
   text-align: center;
 }
 
-button {
-  margin: auto;
-  text-align: center;
-  font-size: 2vw;
-}
+
 
 table, th, td {
     border: 1px solid black;
